@@ -1,12 +1,13 @@
+```
 git config --global user.name "Your Name"
 git config --global user.email "email@example.com"
 git init
-git add <hello.txt>  # 把所有要提交的文件修改放到暂存区
+git add <hello.txt>        # 把所有要提交的文件修改放到暂存区
 git commit -m 'add a file' # 把暂存区的所有内容提交到当前分支
-git status #掌握工作区状态
-git diff #查看文件修改内容
-git log #查看提交历史
-	git log --pretty=oneline
+git status                 #掌握工作区状态
+git diff                   #查看文件修改内容
+git log                    #查看提交历史
+git log --pretty=oneline
 git reset --hard HEAD^ #回退到上一个版本
 	HEAD^^(上上版本),HEAD~100(往上100个版本)
 	commit id(版本号) 可回到指定版本
