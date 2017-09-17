@@ -1,13 +1,18 @@
+##常用命令
 ```
-git config --global user.name "Your Name"
-git config --global user.email "email@example.com"
-git init
-git add <hello.txt>        # 把所有要提交的文件修改放到暂存区
+git config --global user.name "Your Name"           #设置用户名
+git config --global user.email "email@example.com"  #设置邮箱
+git remote set-url origin [url]                     #git修改远程仓库地址
+git config --list          #查看git设置列表信息
+mkdir <文件>
+cd <文件>
+git init      #初始化
+git add <文件>             # 把所有要提交的文件修改放到暂存区
 git commit -m 'add a file' # 把暂存区的所有内容提交到当前分支
-git status                 #掌握工作区状态
+git status                 #查看工作区状态
 git diff                   #查看文件修改内容
 git log                    #查看提交历史
-git log --pretty=oneline
+git log --pretty=oneline   
 git reset --hard HEAD^ #回退到上一个版本
 	HEAD^^(上上版本),HEAD~100(往上100个版本)
 	commit id(版本号) 可回到指定版本
@@ -18,8 +23,8 @@ git reflog #查看历史命令
 	master Git自动创建的分支
 	HEAD 指针
 git diff HEAD -- <file> #查看工作区和版本库里最新版本的区别
-git checkout -- <file> #用版本库的版本替换工作区的版本，无论是工作区的修改还是删除，都可以'一键还原'
-	#丢弃工作区的修改（让文件回到最近一次的git commit或git add时的状态）
+git checkout -- <file>  #用版本库的版本替换工作区的版本，无论是工作区的修改还是删除，都可以'一键还原'
+	                #丢弃工作区的修改（让文件回到最近一次的git commit或git add时的状态）
 git reset HEAD <file> #把暂存区的修改撤销掉，重新放回工作区。
 git rm <file> #删除文件，若文件已提交到版本库，不用担心误删，但是只能恢复文件到最新版本
 
@@ -30,8 +35,10 @@ git push -u origin master #第一次把当前分支master推送到远程，-u参
 git push origin master #把当前分支master推送到远程
 git clone git@github.com:username/repostery.git #从远程库克隆一个到本地库
 	#git支持多种协议，包括https，但通过试试支持原生git协议速度最快
+```
+##分支
+```
 
-分支
 git checkout -b dev #创建并切换分支
 	#相当于git branch dev 和git checkout dev 
 git branch #查看当前分支，当前分支前有个*号
@@ -56,8 +63,11 @@ git remote -v #查看远程库详细信息
 git pull #抓取远程提交
 git checkout -b branch-name origin/branch-name #在本地创建和远程分支对应的分支
 git branch --set-upstream branch-name origin/branch-name #建立本地分支和远程分支的关联
+```
 
-标签
+```
+##标签
+```
 git tag v1.0 #给当前分支最新的commit打标签
 git tag v0.9 36df530 #给历史提交的commit打标签
 git tag -a v0.1 -m 'version 0.1 released' 3628164 #-a指定标签名，-m指定说明文字
@@ -69,8 +79,10 @@ git push origin <tagname> #推送某个标签到远程
 git push origin --tags #推送所有尚未推送的本地标签
 删除远程标签  git tag -d v0.2 #先删除本地标签
 			 git push origin :refs/tags/v0.2 #删除远程标签
+```
 
-自定义git
+##自定义git
+```
 git config --global color.ui true
 编写.gitignore文件来忽略某些文件，此文件本身要放到版本库内，并可对其做版本管理
 git add -f hello.pyc #-f参数强制添加到Git
@@ -87,6 +99,7 @@ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Crese
 --global参数时针对当前用户起作用，如果不加，仅针对当前仓库起作用
 每个仓库的Git配置文件在 .git/config 文件中
 当前用户的Git配置文件在用户主目录下的 .gitconfig 文件中
+```
 ```
 ##搭建Git服务器
 ```
