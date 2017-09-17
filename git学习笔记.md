@@ -88,7 +88,7 @@ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Crese
 每个仓库的Git配置文件在 .git/config 文件中
 当前用户的Git配置文件在用户主目录下的 .gitconfig 文件中
 ```
-###搭建Git服务器
+##搭建Git服务器
 ```
 1、安装git sudo apt install git
 2、创建git用户 sudo adduser git
