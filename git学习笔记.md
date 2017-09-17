@@ -88,7 +88,8 @@ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Crese
 每个仓库的Git配置文件在 .git/config 文件中
 当前用户的Git配置文件在用户主目录下的 .gitconfig 文件中
 ```
-搭建Git服务器
+###搭建Git服务器
+```
 1、安装git sudo apt install git
 2、创建git用户 sudo adduser git
 3、创建证书登录，将所有需要登录的用户的公钥导入到/home/git/.ssh/authorized_keys文件，每行一个
@@ -102,3 +103,4 @@ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Crese
 
 6、克隆远程仓库
 git clone git@server:/srv/sample.git
+```
